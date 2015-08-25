@@ -1,5 +1,6 @@
 language: node_js
-
-before_install: npm install -g velocity-cli
-
+install:
+  - npm install -g velocity-cli
+  - curl https://install.meteor.com/ | sh
+  - export PATH=$PATH:~/.meteor
 script: ./run-tests.sh ci
