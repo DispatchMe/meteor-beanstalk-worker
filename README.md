@@ -1,5 +1,7 @@
 This package is meant to be used inside of a larger Meteor application run inside of the [AWS Elastic Beanstalk worker tier](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features-managing-env-tiers.html).
 
+[![Build Status](https://travis-ci.org/DispatchMe/meteor-beanstalk-worker.svg?branch=master)](https://travis-ci.org/DispatchMe/meteor-beanstalk-worker)
+
 # How it works
 You should read the documentation above. However, in general, this package registers REST endpoints for handling an incoming SQS message (`POST /`) and a health check (`GET /health`). If the worker functions throw an error, then the message will "fail". Otherwise, the message will "succeed", and the SQS daemon will remove the message from the queue.
 
